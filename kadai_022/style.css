@@ -1,0 +1,95 @@
+/* スタイルの下準備 */
+h1, p, body{
+    margin: 0;    /* h1、p、body要素の上下左右の余白を0に指定 */
+}
+p, a{
+    font-size: 20px;    /* p要素とa要素のフォントサイズを20pxに指定 */
+}
+
+/* header部分のスタイル */
+header{
+    margin-bottom: 20px;    /* 下の余白を20pxに指定 */
+    background-color: rgb(244, 79, 79); /* 背景色を指定 */
+    text-align: center;     /* 中の要素を中央揃えに指定 */
+}
+h1{
+    color: rgb(255, 255, 255);  /* 文字色を指定 */
+}
+
+/* main部分のスタイル */
+/* main要素内の余白 */
+main{
+    padding: 10px;
+}
+
+/* flexコンテナの設定 */
+#parent{
+    display: flex;
+    justify-content: space-between; /* 両端を含め均等に配置 */
+}
+
+/* flexアイテムの設定 */
+.contents{
+    border: 3px solid rgb(238, 204, 204);   /* 枠線の指定 */
+    flex-basis: 25%;    /* 親要素に対する幅の指定 */
+    padding: 10px 15px; /* 要素内の余白　上下　左右 */
+    margin: 20px 0;     /* 要素外の余白　上下　左右 */
+    text-align: center; /* 要素を中央揃え */
+}
+
+/* h2要素のスタイル */
+h2{
+    font-size: 25px;    /* フォントサイズの指定 */
+    border-bottom: 3px dotted rgb(236, 122, 122);   /* 下線の指定 */
+}
+h2::before{
+    content: "●";   /* 要素の前に「●」を表示 */
+    color: rgb(239, 111, 139);  /* 「●」の色の指定 */
+}
+
+/* contentsクラスの2番目のp要素の1文字目を装飾 */
+.contents p:nth-of-type(2)::first-letter{
+    font-weight: bold;
+    color: rgb(97, 206, 249);   
+}
+
+/* contentsクラスのimg要素のスタイル */
+.contents img{
+    margin: 10px 0; /* 余白　上下　左右 */
+    width: 70%;     /* 親要素の幅に対して70% */
+}
+
+/* フッター部分のスタイル */
+/* footer要素内のスタイル */
+footer{
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+}
+/* a要素のスタイル */
+footer a{
+    color: rgb(255, 255, 255);
+}
+/* 訪問済みリンクのスタイル */
+footer a:visited{
+    color: rgb(193, 234, 251);
+}
+/* マウスカーソルが乗った時のスタイル */
+footer a:hover{
+    color: rgb(245, 178, 168);
+}
+
+/* レスポンシブ対応のスタイル */
+@media screen and (max-width:768px){
+    /* h2のフォントサイズを指定 */
+    h2{
+        font-size: 30px;
+    }
+    /* pのフォントサイズを指定 */
+    p{
+        font-size: 25px;
+    }
+    /* flexコンテナの要素を縦に並べる */
+    #parent{
+        flex-direction: column;
+    }
+}
